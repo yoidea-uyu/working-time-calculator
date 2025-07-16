@@ -21,8 +21,12 @@ if (form) {
     const startMinute = parseInt(document.getElementById('startMinute').value, 10);
     const endHour = parseInt(document.getElementById('endHour').value, 10);
     const endMinute = parseInt(document.getElementById('endMinute').value, 10);
-    const lessonMinutes = parseInt(document.getElementById('lessonMinutes').value, 10);
+    const lessonMinutesRaw = parseInt(document.getElementById('lessonMinutes').value, 10);
     const halfLessonMinutes = parseInt(document.getElementById('halfLessonMinutes').value, 10);
+    const weeklyTest = document.getElementById('weeklyTest').checked;
+
+    // 週テ有なら授業時間から10分引く
+    const lessonMinutes = weeklyTest ? Math.max(0, lessonMinutesRaw - 10) : lessonMinutesRaw;
 
     // 勤務時間（分）計算
     let startTotal = startHour * 60 + startMinute;
