@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>勤務時間計算ツール</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>勤務時間計算ツール</h1>
+  </header>
+  <main>
+    <div class="center-box">
+      <p>
+        事務の時間は、勤務時間から授業時間・1/2給時間を引いた値です。<br>
+        労働基準法により、勤務時間が6時間（360分）を超える場合は休憩45分、8時間（480分）を超える場合は休憩60分が自動的に事務の時間から引かれます。<br>
+        事務の時間は5分単位で計算され、1の位が5と0以外は切り捨てられます。
+      </p>
+      <form id="timeForm">
+        <label>勤務開始時刻:
+          <input type="number" id="startHour" min="0" max="23" maxlength="2" placeholder="時" required> :
+          <input type="number" id="startMinute" min="0" max="59" maxlength="2" placeholder="分" required>
+        </label><br>
+        <label>勤務終了時刻:
+          <input type="number" id="endHour" min="0" max="23" maxlength="2" placeholder="時" required> :
+          <input type="number" id="endMinute" min="0" max="59" maxlength="2" placeholder="分" required>
+        </label><br>
+        <label>授業時間（分）:
+          <input type="number" id="lessonMinutes" min="0" placeholder="例: 90" required>
+        </label><br>
+        <label>1/2給時間（分）:
+          <input type="number" id="halfLessonMinutes" min="0" placeholder="例: 45" required>
+        </label><br>
+        <button type="submit">計算</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-btn">
+      <a href="https://github.com/uyu-idea/worktime-calc/issues/new" target="_blank" rel="noopener noreferrer">
+        📨 お問い合わせ（GitHub）
+      </a>
+    </div>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
